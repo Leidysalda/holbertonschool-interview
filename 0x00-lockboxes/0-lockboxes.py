@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 
 def canUnlockAll(boxes):
-    """
-     Locked boxes
-    """
-    n = 0
+    """ Locked boxes """
     keys = [0]
 
     if boxes is None or boxes == []:
@@ -18,5 +15,4 @@ def canUnlockAll(boxes):
 
     if len(keys) != len(boxes):
         return False
-
     return True

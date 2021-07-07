@@ -62,7 +62,7 @@ int a, b;
 
 for (a = 1; a < lev / 3; a += 3)
 {
-for (b = 1; b < lev / 3;  b += 3)
+for (b = 1; b < lev / 3; b += 3)
 {
 if ((lev / 9) * a <= i && ((lev / 9) * a) + lev / 9 > i)
 {

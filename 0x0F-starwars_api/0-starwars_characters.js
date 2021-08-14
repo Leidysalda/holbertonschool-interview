@@ -9,7 +9,7 @@ request(api + film, (error, response, body) => {
   const characters = JSON.parse(body).characters;
   viewNames(characters);
 });
-//Results
+// Results
 const viewNames = (names, i = 0) => {
   if (i === names.length) return;
   request(names[i], (error, response, body) => {

@@ -12,8 +12,8 @@ def count_words(subreddit, word_list, kw_count={}, next_pg=None, reap_kw={}):
 
     if next_pg:
         subRhot = requests.get('https://reddit.com/r/' + subreddit +
-                              '/hot.json?after=' + next_pg,
-                              headers=headers)
+                               '/hot.json?after=' + next_pg,
+                               headers=headers)
     else:
         subRhot = requests.get('https://reddit.com/r/' + subreddit +
                                '/hot.json', headers=headers)

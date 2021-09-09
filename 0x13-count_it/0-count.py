@@ -8,7 +8,7 @@ import sys
 def count_words(subreddit, word_list, kw_count={}, next_pg=None, reap_kw={}):
     """ Count words
     """
-    headers = {"User-Agent": "leidysalda"}
+    headers = {"User-Agent": "Leidysalda"}
 
     if next_pg:
         subRhot = requests.get('https://reddit.com/r/' + subreddit +

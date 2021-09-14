@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-""" recursive function that queries the Reddit API
+"""
+Recursive function that queries the Reddit API
 """
 import requests
 import sys
 
 
 def count_words(subreddit, word_list, kw_count={}, next_pg=None, reap_kw={}):
-    """ Count words
+    """
+    Count words
     """
     headers = {"User-Agent": "Leidysalda"}
 
@@ -34,7 +36,7 @@ def count_words(subreddit, word_list, kw_count={}, next_pg=None, reap_kw={}):
     for post in subRhot_posts:
         post_data = post['data']
         post_title = post_data['title']
-        title_words = post_title.split()
+        title_words = [s.lower() for s in post_title.split(' ')]
         for w in title_words:
             for key in kw_count:
                 if w.lower() == key.lower():
@@ -53,4 +55,4 @@ def count_words(subreddit, word_list, kw_count={}, next_pg=None, reap_kw={}):
 
         for res in sorted_res:
             if res[1] > 0:
-                print(f"{res[0]}: {res[1]}")
+                print(f"{res[0].lower()}: {res[1]}")

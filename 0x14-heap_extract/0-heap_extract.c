@@ -95,7 +95,7 @@ tmp2 = tmp1->left;
 else
 {
 if (tmp1->left->n > tmp1->right->n)
-tmp2 = tmp1->right;
+tmp2 = tmp1->left;
 else
 tmp2 = tmp1->right;
 }

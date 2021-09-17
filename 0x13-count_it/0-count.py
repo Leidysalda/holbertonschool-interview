@@ -1,15 +1,11 @@
 #!/usr/bin/python3
-"""
-Recursive function that queries the Reddit API
-"""
+""" Recursive function that queries the Reddit API """
 import requests
 import sys
 
 
 def count_words(subreddit, word_list, kw_count={}, next_pg=None, reap_kw={}):
-    """
-    Count words
-    """
+    """ Count words """
     headers = {"User-Agent": "Leidysalda"}
 
     if next_pg:

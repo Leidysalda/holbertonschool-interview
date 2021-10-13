@@ -42,6 +42,7 @@ def count_words(subreddit, word_list, kw_count={}, next_pg=None, reap_kw={}):
             for key in kw_count:
                 if w.lower() == key.lower():
                     kw_count[key] += 1
+
     # Next page
     if next_pg:
         count_words(subreddit, word_list, kw_count, next_pg, reap_kw)

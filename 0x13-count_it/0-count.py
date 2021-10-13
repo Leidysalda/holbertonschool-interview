@@ -32,7 +32,7 @@ def count_words(subreddit, word_list, kw_count={}, next_pg=None, reap_kw={}):
     for post in subRhot_posts:
         post_data = post['data']
         post_title = post_data['title']
-        title_words = [s.lower() for s in post_title.split(' ')]
+        title_words = post_title.split()
         for w in title_words:
             for key in kw_count:
                 if w.lower() == key.lower():

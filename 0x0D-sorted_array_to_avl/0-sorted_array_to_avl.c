@@ -36,7 +36,7 @@ avl_t *search_avl(int *array, int first, int last, avl_t *node)
 int half;
 avl_t *new_node;
 
-if (firts > last)
+if (first > last)
 return (NULL);
 
 new_node = malloc(sizeof(avl_t));
@@ -44,9 +44,9 @@ if (new_node == NULL)
 return (NULL);
 
 half = (first + last) / 2;
-new_node->n = arra[halt];
+new_node->n = array[half];
 new_node->parent = node;
-new_node->left = search_avl(array, first, halt - 1, new_node);
-new_node->right = search_avl(array, halt + 1, last, new_node);
+new_node->left = search_avl(array, first, half - 1, new_node);
+new_node->right = search_avl(array, half + 1, last, new_node);
 return (new_node);
 }

@@ -1,23 +1,6 @@
 #include "binary_trees.h"
 
 /**
- * sorted_array_to_avl - sorted array
- *
- * @array: The array to be printed
- * @size: Size of the array
- *
- * Return: Pointer or NULL
- */
-
-avl_t *sorted_array_to_avl(int *array, size_t size)
-{
-if (array == NULL)
-return (NULL);
-
-return (search_avl(array, 0, (int)size - 1, NULL));
-}
-
-/**
  * search_avl - search avl
  *
  * @array: array
@@ -46,4 +29,24 @@ new_node->parent = node;
 new_node->left = search_avl(array, first, half - 1, new_node);
 new_node->right = search_avl(array, half + 1, last, new_node);
 return (new_node);
+}
+
+/**
+ * sorted_array_to_avl - sorted array
+ *
+ * @array: The array to be printed
+ * @size: Size of the array
+ *
+ * Return: Pointer or NULL
+ */
+
+avl_t *sorted_array_to_avl(int *array, size_t size)
+{
+avl_t *tree;
+
+if (array == NULL)
+return (NULL);
+
+tree = search_avl(array, 0, (int)size - 1, NULL);
+return (tree);
 }
